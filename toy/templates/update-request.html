@@ -1,0 +1,33 @@
+{%extends "layout.html"%} {%block content%}{%for request in requests%}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <div class="mr-2">
+        {{vaccine.query.filter_by(id=request.vaccineid).first().vaccinename}}
+      </div>
+      <div>
+        <form
+          method="post"
+          action="{{url_for('main.approve_request',requestid=request.id)}}"
+        >
+          <button type="submit" class="btn btn-success btn-sm mt-1 mb-1">
+            Approve
+          </button>
+        </form>
+        <form
+          method="post"
+          action="{{url_for('main.reject_request',requestid=request.id)}}"
+        >
+          <button type="submit" class="btn btn-danger btn-sm mt-1 mb-1">
+            Reject
+          </button>
+        </form>
+      </div>
+    </div>
+    <h2><a class="article-title" href="#">{{request.quantity}}</a></h2>
+    <p class="article-content">
+      {{center.query.filter_by(id=request.centerid).first().centername}}
+    </p>
+  </div>
+</article>
+{%endfor%}{%endblock%}

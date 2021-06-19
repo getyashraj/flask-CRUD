@@ -1,0 +1,11 @@
+{%extends "layout.html"%} {%block content%}{%for vaccine in vaccines%}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <div class="mr-2">{{vaccine.manufacturing_company}}</div>
+    </div>
+    <h2><div class="mr-2">{{vaccine.vaccinename}}</div></h2>
+    <!-- <p class="article-content"></p> -->
+  </div>
+</article>
+{%endfor%}{%endblock%}

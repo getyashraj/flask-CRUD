@@ -1,0 +1,26 @@
+{%extends "layout.html"%} {%block content%}
+<div class="d-flex justify-content-around">
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Registered vaccination Centers</h5>
+      <p class="card-text">{{center_count}}</p>
+      <a href="/centers" class="btn btn-primary">Centers</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Registered vaccines</h5>
+      <p class="card-text">{{vaccine_count}}</p>
+      <a href="#" class="btn btn-primary">Vaccines</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Pending Requests</h5>
+      <p class="card-text">{{request_count}}</p>
+      <a href="/updaterequest" class="btn btn-primary">Requests</a>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

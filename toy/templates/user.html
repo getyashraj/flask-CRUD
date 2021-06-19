@@ -1,0 +1,15 @@
+{%extends "layout.html"%} {%block content%}
+<h2>Your requests are</h2>
+{%for request in requests%}
+<div class="d-flex justify-content-around">
+  <div class="card" style="width: 50rem">
+    <div class="d-flex justify-content-between card-body">
+      <p class="card-text">
+        {{vaccine.query.filter_by(id=request.vaccineid).first().vaccinename}}
+      </p>
+      <p class="card-text">{{request.quantity}} UNITS</p>
+      <p class="card-text">{{request.status}}</p>
+    </div>
+  </div>
+</div>
+{%endfor%}{%endblock%}
